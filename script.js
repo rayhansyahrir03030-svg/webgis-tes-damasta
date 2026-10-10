@@ -82,7 +82,7 @@ function warnaLandcover(values) {
 
 let layerLandcover = null;
 
-fetch("data/landcovertes.tif")
+fetch("Data/landcovertes.tif")
   .then((res) => res.arrayBuffer())
   .then((arrayBuffer) => parseGeoraster(arrayBuffer))
   .then((georaster) => {
@@ -200,7 +200,7 @@ const layerLahanKosong = L.layerGroup();
 const layerJalan = L.layerGroup();
 
 /* 7.1 Bangunan (MultiPolygon, 191 fitur) */
-const pBangunan = fetch("data/Bangunan.geojson")
+const pBangunan = fetch("Data/Bangunan.geojson")
   .then((res) => res.json())
   .then((data) => {
     L.geoJSON(data, {
@@ -223,7 +223,7 @@ const pBangunan = fetch("data/Bangunan.geojson")
   .catch((err) => console.error("Gagal load Data_Bangunan.geojson:", err));
 
 /* 7.2 Vegetasi (MultiPolygon, 26 fitur) */
-const pVegetasi = fetch("data/Vegetasi.geojson")
+const pVegetasi = fetch("Data/Vegetasi.geojson")
   .then((res) => res.json())
   .then((data) => {
     L.geoJSON(data, {
@@ -242,7 +242,7 @@ const pVegetasi = fetch("data/Vegetasi.geojson")
   .catch((err) => console.error("Gagal load Data_vegetasi.geojson:", err));
 
 /* 7.3 Lahan Kosong (MultiPolygon, 3 fitur) */
-const pLahanKosong = fetch("data/LahanKosong.geojson")
+const pLahanKosong = fetch("Data/LahanKosong.geojson")
   .then((res) => res.json())
   .then((data) => {
     L.geoJSON(data, {
@@ -262,7 +262,7 @@ const pLahanKosong = fetch("data/LahanKosong.geojson")
 
 /* 7.4 Jalan (MultiLineString, 15 fitur)
    Catatan: atribut "area" pada data jalan sebenarnya panjang jalan (km). */
-const pJalan = fetch("data/Jalan.geojson")
+const pJalan = fetch("Data/Jalan.geojson")
   .then((res) => res.json())
   .then((data) => {
     L.geoJSON(data, {
